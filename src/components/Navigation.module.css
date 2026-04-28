@@ -1,0 +1,24 @@
+.navbar {
+  transition: all 0.3s ease;
+}
+
+.navLink {
+  position: relative;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(135deg, #0066cc, #00d4ff);
+  transition: width 0.3s ease;
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
