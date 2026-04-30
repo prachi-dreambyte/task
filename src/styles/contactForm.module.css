@@ -1,0 +1,399 @@
+/* Contact Form Container */
+.contactContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 4fr);
+  gap: 1.5rem;
+}
+
+/* Form Section */
+.formSection {
+  background: #fff;
+  border: 0.5px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+/* Info Panel */
+.infoPanel {
+  background-image: url(https://images.unsplash.com/photo-1497366216548-37526070297c?w=900&h=600&fit=crop);
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.infoOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000000cf;
+  z-index: 1;
+}
+
+.infoContent {
+  position: relative;
+  z-index: 2;
+}
+
+/* Form Header */
+.formHeader h2 {
+  font-size: 34px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.formHeader p {
+  font-size: 20px;
+  color: #6c757d;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Form Grid */
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Service Tags */
+.serviceTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .contactContainer {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .formHeader h2 {
+    font-size: 28px;
+  }
+  
+  .formHeader p {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contactContainer {
+    gap: 1.5rem;
+  }
+  
+  .formGrid {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  
+  .formHeader h2 {
+    font-size: 24px;
+  }
+  
+  .formHeader p {
+    font-size: 16px;
+  }
+  
+  .formSection {
+    padding: 1rem;
+  }
+  
+  .infoPanel {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contactContainer {
+    gap: 1rem;
+  }
+  
+  .formHeader h2 {
+    font-size: 20px;
+  }
+  
+  .formHeader p {
+    font-size: 14px;
+  }
+  
+  .serviceTags {
+    gap: 4px;
+  }
+  
+  .formSection {
+    padding: 0.75rem;
+  }
+  
+  .infoPanel {
+    padding: 0.75rem;
+  }
+}
+
+/* Input Styles */
+.inputField {
+  padding: 10px 12px;
+  font-size: 18px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #f9fafb;
+  color: #000;
+  outline: none;
+  font-family: inherit;
+  width: 100%;
+  transition: all 0.2s ease;
+}
+
+.inputFieldError {
+  border-color: #f87171 !important;
+}
+
+/* Tag Button */
+.tagButton {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 15px;
+  cursor: pointer;
+  border: 1px solid #d1d5db;
+  background: #f3f4f6;
+  color: #000;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  font-weight: 500;
+}
+
+.tagButtonActive {
+  border: 1px solid #da251c;
+  background: #da251c;
+  color: #fff;
+}
+
+/* Submit Button */
+.submitButton {
+  width: 100%;
+  padding: 15px;
+  background: #198754;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: inherit;
+  margin-top: 0.75rem;
+  transition: all 0.3s ease;
+}
+
+.submitButton:hover {
+  background: #198754;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(218, 37, 28, 0.3);
+}
+
+/* Success Message */
+.successMessage {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #f0faf4;
+  border: 0.5px solid #86efac;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 13px;
+  color: #166534;
+  margin-top: 0.75rem;
+}
+
+/* Error Style */
+.errorText {
+  font-size: 11px;
+  color: #dc2626;
+  margin-top: 2px;
+}
+
+/* Info Item */
+.infoItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.infoIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.infoLabel {
+  font-size: 18px;
+  color: #da251c;
+  margin-bottom: 2px;
+}
+
+.infoContentText {
+  font-size: 15px;
+  color: #fff;
+  line-height: 1.5;
+}
+
+.infoLink {
+  color: rgba(255, 255, 255, 0.95);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.infoLink:hover {
+  text-decoration: underline;
+}
+
+/* Divider */
+.divider {
+  border: none;
+  border-top: 0.5px solid rgba(255, 255, 255, 0.25);
+  position: relative;
+  z-index: 2;
+}
+
+/* Company Badge */
+.companyBadge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+  letter-spacing: 0.04em;
+  backdrop-filter: blur(4px);
+}
+
+/* Info Title */
+.infoTitle {
+  font-size: 25px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Info Description */
+.infoDescription {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Map Section */
+.mapSection {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background:#f7f7f7;
+  border: 0.5px solid #000;
+  border-radius: 12px;
+}
+
+.mapTitle {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.mapDescription {
+  font-size: 18px;
+  color: #6c757d;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.mapContainer {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.mapIframe {
+  width: 100%;
+  height: 450px;
+  border: none;
+}
+
+/* Responsive Map Styles */
+@media (max-width: 1024px) {
+  .mapTitle {
+    font-size: 24px;
+  }
+  
+  .mapDescription {
+    font-size: 16px;
+  }
+  
+  .mapIframe {
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mapSection {
+    padding: 1rem;
+  }
+  
+  .mapTitle {
+    font-size: 22px;
+  }
+  
+  .mapDescription {
+    font-size: 15px;
+  }
+  
+  .mapIframe {
+    height: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mapSection {
+    padding: 0.75rem;
+    margin-top: 1.5rem;
+  }
+  
+  .mapTitle {
+    font-size: 20px;
+  }
+  
+  .mapDescription {
+    font-size: 14px;
+  }
+  
+  .mapIframe {
+    height: 300px;
+  }
+}

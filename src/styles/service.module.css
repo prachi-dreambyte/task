@@ -1,0 +1,374 @@
+/* Service Section Container */
+.serviceSection {
+  padding: 5rem 0;
+  background: #f7f7f7;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Section Title */
+.sectionTitle {
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.sectionTitle h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 1rem;
+}
+
+.sectionTitle p {
+  font-size: 1.1rem;
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Services Container */
+.servicesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Service Item */
+.serviceItem {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  position: relative;
+}
+
+.serviceItem.reverse {
+  direction: rtl;
+}
+
+.serviceItem.reverse > * {
+  direction: ltr;
+}
+
+/* Service Content */
+.serviceContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  padding: 2rem;
+}
+
+/* Service Icon */
+.serviceIconWrapper {
+  width: 80px;
+  height: 80px;
+  background: #8080801c;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 24px rgba(218, 37, 28, 0.25);
+}
+
+.serviceIcon {
+  color: #da251c;
+  width: 40px;
+  height: 40px;
+  stroke-width: 1.5;
+}
+
+.serviceItem:hover .serviceIconWrapper {
+  transform: scale(1.1);
+  box-shadow: 0 12px 32px rgba(218, 37, 28, 0.35);
+}
+
+.serviceTag {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #da251c;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  opacity: 0;
+  animation: slideInUp 0.6s ease-out forwards;
+}
+
+.serviceItem:nth-child(1) .serviceTag {
+  animation-delay: 0.1s;
+}
+
+.serviceItem:nth-child(2) .serviceTag {
+  animation-delay: 0.3s;
+}
+
+.serviceItem:nth-child(3) .serviceTag {
+  animation-delay: 0.5s;
+}
+
+.serviceItem:nth-child(4) .serviceTag {
+  animation-delay: 0.7s;
+}
+
+.serviceTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  opacity: 0;
+  animation: slideInUp 0.6s ease-out forwards;
+}
+
+.serviceItem:nth-child(1) .serviceTitle {
+  animation-delay: 0.2s;
+}
+
+.serviceItem:nth-child(2) .serviceTitle {
+  animation-delay: 0.4s;
+}
+
+.serviceItem:nth-child(3) .serviceTitle {
+  animation-delay: 0.6s;
+}
+
+.serviceItem:nth-child(4) .serviceTitle {
+  animation-delay: 0.8s;
+}
+
+.serviceDescription {
+  font-size:20px;
+  color: #000;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: slideInUp 0.6s ease-out forwards;
+}
+
+.serviceItem:nth-child(1) .serviceDescription {
+  animation-delay: 0.3s;
+}
+
+.serviceItem:nth-child(2) .serviceDescription {
+  animation-delay: 0.5s;
+}
+
+.serviceItem:nth-child(3) .serviceDescription {
+  animation-delay: 0.7s;
+}
+
+.serviceItem:nth-child(4) .serviceDescription {
+  animation-delay: 0.9s;
+}
+
+/* Service Image */
+.serviceImage {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.serviceImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
+}
+
+.serviceItem:hover .serviceImage img {
+  transform: scale(1.08);
+}
+
+.serviceImage::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #8080801c;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.serviceItem:hover .serviceImage::before {
+  opacity: 1;
+}
+
+/* Hover Effects */
+.serviceContent {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.serviceItem:hover .serviceContent {
+  transform: translateX(10px);
+}
+
+.serviceItem.reverse:hover .serviceContent {
+  transform: translateX(-10px);
+}
+
+.serviceItem:hover .serviceContent {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+}
+
+.serviceTitle {
+  transition: color 0.3s ease;
+}
+
+.serviceItem:hover .serviceTitle {
+  color: #da251c;
+}
+
+/* Animations */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .serviceItem {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .serviceItem.reverse {
+    direction: ltr;
+  }
+
+  .serviceImage {
+    max-height: 400px;
+  }
+
+  .serviceTitle {
+    font-size: 1.75rem;
+  }
+
+  .serviceIconWrapper {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 1.25rem;
+  }
+
+  .serviceIcon {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 768px) {
+  .serviceSection {
+    padding: 3rem 0;
+  }
+
+  .sectionTitle h2 {
+    font-size: 2rem;
+  }
+
+  .servicesContainer {
+    gap: 3rem;
+  }
+
+  .serviceItem {
+    gap: 1.5rem;
+  }
+
+  .serviceTitle {
+    font-size: 1.5rem;
+  }
+
+  .serviceDescription {
+    font-size: 0.95rem;
+  }
+
+  .serviceImage {
+    max-height: 300px;
+  }
+
+  .serviceContent {
+    padding: 1.5rem;
+  }
+
+  .serviceIconWrapper {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+  }
+
+  .serviceIcon {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .serviceSection {
+    padding: 2rem 0;
+  }
+
+  .sectionTitle h2 {
+    font-size: 1.5rem;
+  }
+
+  .servicesContainer {
+    gap: 2rem;
+  }
+
+  .serviceTitle {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .serviceDescription {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .serviceImage {
+    max-height: 250px;
+  }
+
+  .serviceContent {
+    padding: 1rem;
+  }
+
+  .serviceIconWrapper {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 0.75rem;
+    border-radius: 16px;
+  }
+
+  .serviceIcon {
+    width: 25px;
+    height: 25px;
+  }
+}

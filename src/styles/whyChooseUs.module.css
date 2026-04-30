@@ -1,0 +1,421 @@
+/* Why Choose Us Section */
+.whyChooseUsSection {
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&h=900&fit=crop');
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.whyChooseUsSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #8080801c;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.whyChooseUsSection::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(218, 37, 28, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(218, 37, 28, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Section Title */
+.sectionTitle {
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 2;
+}
+
+.sectionTitle h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.sectionTitle p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin: 0 auto;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Cards Container */
+.cardsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Individual Card */
+.card {
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 28px;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  border: none;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  backdrop-filter: blur(10px);
+}
+
+.card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+/* Icon Container - Large Rounded Square */
+.iconWrapper {
+  width: 50px;
+  height: 50px;
+  background: #8080801c;
+  border-radius: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 2.5rem 2.5rem 0 2.5rem;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 24px rgba(218, 37, 28, 0.25);
+  flex-shrink: 0;
+}
+
+.card:hover .iconWrapper {
+  transform: scale(1.1);
+  box-shadow: 0 12px 32px rgba(218, 37, 28, 0.35);
+}
+
+.icon {
+  color: #da251c;
+  width: 40px;
+  height: 40px;
+  stroke-width: 1.5;
+}
+
+/* Card Content */
+.cardContent {
+  padding: 2rem 2.5rem 2.5rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+/* Card Title */
+.cardTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 0.75rem;
+  transition: color 0.3s ease;
+  line-height: 1.3;
+}
+
+.card:hover .cardTitle {
+  color: #da251c;
+}
+
+/* Card Description */
+.cardDescription {
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.7;
+  flex-grow: 1;
+  transition: color 0.3s ease;
+}
+
+.card:hover .cardDescription {
+  color: #475569;
+}
+
+/* CTA Card */
+.ctaCard {
+  background: #8080801c;
+  color: white;
+  border-radius: 16px;
+  padding: 3rem 2rem;
+  text-align: center;
+  margin-top: 3rem;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.ctaCard::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.ctaCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 50px rgba(218, 37, 28, 0.3);
+}
+
+.ctaTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.ctaDescription {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  opacity: 0.95;
+  position: relative;
+  z-index: 1;
+}
+
+.ctaButton {
+  background: white;
+  color: #da251c;
+  border: none;
+  padding: 12px 35px;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.ctaButton:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Dark Mode */
+.dark .whyChooseUsSection {
+  background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=1600&h=900&fit=crop&blend=https://images.unsplash.com/photo-1000000000000-000000000000?w=1600&h=900&fit=crop&blend-mode=darken');
+}
+
+.dark .sectionTitle h2 {
+  color: #ffffff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.dark .sectionTitle p {
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+.dark .card {
+  background: rgba(26, 31, 46, 0.9);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.dark .card:hover {
+  background-color: rgba(36, 45, 61, 0.95);
+  border-color: #da251c;
+  box-shadow: 0 12px 40px rgba(218, 37, 28, 0.25);
+}
+
+.dark .cardTitle {
+  color: #ffffff;
+}
+
+.dark .cardTitle:hover {
+  color: #ff6b6b;
+}
+
+.dark .cardDescription {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.dark .cardDescription:hover {
+  color: rgba(255, 255, 255, 0.95);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .cardsContainer {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .sectionTitle h2 {
+    font-size: 2rem;
+  }
+
+  .iconWrapper {
+    width: 110px;
+    height: 110px;
+    margin: 2rem 2rem 0 2rem;
+  }
+
+  .icon {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .whyChooseUsSection {
+    padding: 3rem 0;
+  }
+
+  .sectionTitle {
+    margin-bottom: 2.5rem;
+  }
+
+  .sectionTitle h2 {
+    font-size: 1.75rem;
+  }
+
+  .sectionTitle p {
+    font-size: 1rem;
+  }
+
+  .cardsContainer {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .card {
+    border-radius: 24px;
+  }
+
+  .iconWrapper {
+    width: 100px;
+    height: 100px;
+    margin: 2rem 2rem 0 2rem;
+    border-radius: 28px;
+  }
+
+  .icon {
+    width: 54px;
+    height: 54px;
+  }
+
+  .cardContent {
+    padding: 1.75rem 2rem 2rem 2rem;
+  }
+
+  .cardTitle {
+    font-size: 1.2rem;
+  }
+
+  .cardDescription {
+    font-size: 0.9rem;
+  }
+
+  .ctaCard {
+    padding: 2rem 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .ctaTitle {
+    font-size: 1.5rem;
+  }
+
+  .ctaDescription {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .whyChooseUsSection {
+    padding: 2rem 0;
+  }
+
+  .sectionTitle h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .sectionTitle {
+    margin-bottom: 2rem;
+  }
+
+  .cardsContainer {
+    gap: 1rem;
+  }
+
+  .card {
+    border-radius: 20px;
+  }
+
+  .iconWrapper {
+    width: 90px;
+    height: 90px;
+    margin: 1.75rem 1.75rem 0 1.75rem;
+    border-radius: 24px;
+  }
+
+  .icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .cardContent {
+    padding: 1.5rem 1.75rem 1.75rem 1.75rem;
+  }
+
+  .cardTitle {
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .cardDescription {
+    font-size: 0.85rem;
+  }
+
+  .ctaCard {
+    padding: 1.5rem 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .ctaTitle {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .ctaDescription {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .ctaButton {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+  }
+}

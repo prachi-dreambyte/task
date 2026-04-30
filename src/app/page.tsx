@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import HeroBanner from '@/components/HeroBanner';
+import AboutUs from '@/components/AboutUs';
+import MissionVision from '@/components/MissionVision';
 import Services from '@/components/Services';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import Testimonials from '@/components/Testimonials';
@@ -16,6 +18,8 @@ export default function Home() {
     <div className={isDark ? 'dark-mode' : 'light-mode'}>
       <Navigation isDark={isDark} setIsDark={setIsDark} />
       <HeroBanner />
+      <AboutUs />
+      <MissionVision />
       <Services />
       <WhyChooseUs />
       <Testimonials />

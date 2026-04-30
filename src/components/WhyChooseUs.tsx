@@ -1,117 +1,86 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { Users, Zap, DollarSign, Clock, CheckCircle, Rocket } from 'lucide-react';
+import styles from '@/styles/whyChooseUs.module.css';
 
 const reasons = [
   {
     id: 1,
     title: 'Expert Team',
-    description: 'Experienced professionals with years of industry expertise.',
-    icon: '👥',
+    description: 'Experienced professionals with years of industry expertise dedicated to your success.',
+    icon: Users,
   },
   {
     id: 2,
-    title: 'Fast Delivery',
-    description: 'Quick turnaround times without compromising quality.',
-    icon: '⚡',
+    title: 'Reliable Guidance',
+    description: 'Proven results, every time. You can count on us to deliver exceptional outcomes.',
+    icon: Zap,
   },
   {
     id: 3,
     title: 'Affordable Pricing',
-    description: 'Competitive rates tailored to your budget.',
-    icon: '💰',
+    description: 'Enterprise-grade solutions at small-business-friendly prices.',
+    icon: DollarSign,
   },
   {
     id: 4,
     title: '24/7 Support',
-    description: 'Round-the-clock customer support and maintenance.',
-    icon: '🛟',
+    description: 'Round-the-clock customer support and maintenance for your peace of mind.',
+    icon: Clock,
   },
   {
     id: 5,
-    title: 'Proven Results',
-    description: 'Track record of successful projects and satisfied clients.',
-    icon: '✅',
+    title: 'Purpose-Driven',
+    description: 'We believe technology should better the world, not just sell to it.',
+    icon: CheckCircle,
   },
   {
     id: 6,
-    title: 'Latest Technology',
-    description: 'Using cutting-edge tools and frameworks.',
-    icon: '🚀',
+    title: 'Cutting-Edge Tech',
+    description: 'Using AI, Automation, MarTech, and emerging technologies to keep you ahead.',
+    icon: Rocket,
   },
 ];
 
 export default function WhyChooseUs() {
   return (
-    <section id="why-us" className="section-padding">
+    <section id="why-us" className={styles.whyChooseUsSection}>
       <div className="container">
-        <motion.h2
-          className="section-title"
-          initial={{ opacity: 0, y: -20 }}
+        <motion.div
+          className={styles.sectionTitle}
+          initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          Why Choose Us
-        </motion.h2>
+          <h2>You Can Trust Us to Deliver the Best Guidance</h2>
+          <p>Empowering You with Expert Guidance, Every Step of the Way</p>
+        </motion.div>
 
-        <div className="row g-4">
-          {reasons.map((reason, idx) => (
-            <motion.div
-              key={reason.id}
-              className="col-md-6 col-lg-4"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: idx * 0.1 }}
-              viewport={{ once: true }}
-            >
+        <div className={styles.cardsContainer}>
+          {reasons.map((reason, idx) => {
+            const IconComponent = reason.icon;
+            return (
               <motion.div
-                className="card card-hover h-100"
-                whileHover={{ scale: 1.05 }}
+                key={reason.id}
+                className={styles.card}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: idx * 0.1 }}
+                viewport={{ once: true }}
               >
-                <div className="card-body">
-                  <div style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>
-                    {reason.icon}
-                  </div>
-                  <h5 className="card-title fw-bold mb-2">{reason.title}</h5>
-                  <p className="card-text text-muted">{reason.description}</p>
+                <div className={styles.iconWrapper}>
+                  <IconComponent className={styles.icon} />
+                </div>
+                <div className={styles.cardContent}>
+                  <h5 className={styles.cardTitle}>{reason.title}</h5>
+                  <p className={styles.cardDescription}>{reason.description}</p>
                 </div>
               </motion.div>
-            </motion.div>
-          ))}
+            );
+          })}
         </div>
-
-        <motion.div
-          className="row mt-5"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <div className="col-lg-8 mx-auto">
-            <div
-              className="card"
-              style={{
-                background: 'linear-gradient(135deg, #0066cc 0%, #00d4ff 100%)',
-                color: 'white',
-                border: 'none',
-              }}
-            >
-              <div className="card-body text-center py-5">
-                <h4 className="card-title fw-bold mb-3">Ready to Transform Your Business?</h4>
-                <p className="card-text mb-4">
-                  Join hundreds of satisfied clients who have grown their business with us.
-                </p>
-                <button
-                  className="btn btn-light fw-bold"
-                  onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                >
-                  Start Your Project Today
-                </button>
-              </div>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );

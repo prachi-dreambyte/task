@@ -5,8 +5,8 @@
 }
 
 :root {
-  --primary-color: #0066cc;
-  --secondary-color: #00d4ff;
+  --primary-color: #da251c;
+  --secondary-color: #da251c;
   --accent-color: #ff6b6b;
   --dark-bg: #0f1419;
   --light-bg: #ffffff;
@@ -82,14 +82,14 @@ body {
   font-weight: 700;
   margin-bottom: 50px;
   text-align: center;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: #8080801c;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .btn-primary-custom {
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: #8080801c;
   border: none;
   padding: 12px 30px;
   font-weight: 600;
@@ -174,7 +174,7 @@ body {
 .form-control:focus,
 .form-select:focus {
   border-color: var(--primary-color);
-  box-shadow: 0 0 0 0.2rem rgba(0, 102, 204, 0.25);
+  box-shadow: 0 0 0 0.2rem rgba(218, 37, 28, 0.25);
 }
 
 .error-message {
@@ -203,4 +203,74 @@ body {
 
 .dark-mode::-webkit-scrollbar-track {
   background: var(--dark-bg);
+}
+
+/* Footer Styles */
+footer {
+  position: relative;
+  color: white;
+  padding-top: 80px;
+  padding-bottom: 20px;
+}
+
+.text-white-80 {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.text-white-80:hover {
+  color: white !important;
+}
+
+/* Dark mode footer adjustments */
+.dark-mode footer {
+  background: #8080801c;
+}
+
+.dark-mode .text-white-80 {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Icon animations */
+.icon-hover-effect {
+  transition: all 0.3s ease;
+}
+
+.icon-hover-effect:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Sparkle animation */
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.animate-sparkle {
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+/* Gradient text for footer headings */
+.footer-heading {
+  background: #8080801c;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Responsive footer */
+@media (max-width: 768px) {
+  footer {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+  
+  .footer-section {
+    margin-bottom: 30px;
+  }
 }
